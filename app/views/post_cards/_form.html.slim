@@ -1,0 +1,35 @@
+= form_with(model: post_card, local: true) do |form|
+  - if post_card.errors.any?
+    #error_explanation
+      h2
+        = pluralize(post_card.errors.count, "error")
+        | prohibited this post_card from being saved:
+      ul
+        - post_card.errors.full_messages.each do |message|
+          li= message
+  .form-group
+    = form.label :title
+    = form.text_field :title, id: :post_card_title, class: 'form-control'
+  .form-group
+    = form.label :keywords
+    = form.text_field :keywords, id: :post_card_keywords, class: 'form-control'
+  .form-group
+    = form.label :slug
+    = form.text_field :slug, id: :post_card_slug, class: 'form-control'
+  .form-group
+    = form.label :description
+    = form.text_area :description, id: :post_card_description, class: 'form-control'
+  .form-group
+    = form.label :image_url
+    = form.text_field :image_url, id: :post_card_image_url, class: 'form-control'
+  .form-group
+    = form.label :body
+    = form.text_area :body, id: :post_card_body, class: 'form-control'
+  .form-group
+    = form.label :sent_at
+    = form.datetime_select :sent_at, id: :post_card_sent_at, class: 'form-control'
+  .form-group
+    = form.label :published
+    = form.check_box :published, id: :post_card_published, class: 'form-control'
+  .actions
+    = form.submit
