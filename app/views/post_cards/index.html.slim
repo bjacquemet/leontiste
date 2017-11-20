@@ -1,17 +1,18 @@
 p#notice= notice
-h1= t('title.post_cards')
-
-#TODO
-#- Add an administrate and protect it √
-#- Add language translation to routes √
-#- Add language translation to forms √
-#- Translate all static texts 
-#- only show published postal cards √
-#- add next and previous cartes buttons √
-
-p Welcome to our website
 
 .container
+  h1= t('title.post_cards')
+
+  #TODO
+  #- Add an administrate and protect it √
+  #- Add language translation to routes √
+  #- Add language translation to forms √
+  #- Translate all static texts 
+  #- only show published postal cards √
+  #- add next and previous cartes buttons √
+
+  p Welcome to our website
+
   .row
     - @post_cards.each do |post_card|
       .col-lg-4.col-md-4.col-sm-6.col-xs-12.mt-2

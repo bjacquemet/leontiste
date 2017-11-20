@@ -6,7 +6,7 @@
 
 
 body
-  background: image-url('background.jpg')
+  background: white
 
 @media(max-width: 768px)
   #middle
@@ -24,6 +24,8 @@ body
   // transition: width 0.2s
 
 .logo-block
+  a
+    display: block
   h1
     background: none
     display: inline-block
@@ -41,3 +43,12 @@ body
     // -ms-transition: width 0.4s
     // -o-transition: width 0.4s
     // transition: width 0.4s
+
+.rounded
+  border-radius: 0.4rem
+
+.main-container
+  @extend .py-4
+  @extend .px-4
+  background: image-url('background.jpg')
+  box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12), -1px -1px 7px 0px rgba(0, 0, 0, 0.12)

@@ -1,22 +1,13 @@
 nav.navbar.navbar-default.navbar-toggleable-sm.navbar-light.navbar-static-top
   .container
-    button.navbar-toggler.navbar-toggler-right data-toggle="collapse" type="button" data-target="#mainNavbar" aria-controls="mainNavbar"
-      span.navbar-toggler-icon
-    .logo-block.text-center.mr-auto
+    .logo-block.col-lg-9.col-md-9.col-sm-8.col-xs-12
       h1 Leontiste
-      .navbar-brand
-        a href="/"
-          = image_tag('leon.png', alt: "Leon", id:'leon')
-          = image_tag('middle.png', alt: "Middle", id:'middle')
-          = image_tag('tiste.png', alt: "Tiste", id:'tiste')
-    / .collapse.navbar-collapse.justify-content-end
-    = link_to change_locale_path(:en)
-      = image_tag('wp-comments.png', alt: t('menu.languages.en'))
-    = link_to change_locale_path(:fr)
-      = image_tag('wp-watermark.png', alt: t('menu.languages.fr'))
-      / .dropdown
-      /   a.dropdown-toggle(data-toggle='dropdown')
-      /     | Languages
-      /     ul.dropdown-menu
-      /       li.dropdown-item= link_to t('menu.languages.en'), change_locale_path(:en)
-      /       li.dropdown-item= link_to t('menu.languages.fr'), change_locale_path(:fr)
+      a.text-center href="/"
+        = image_tag('leon.png', alt: "Leon", id:'leon')
+        = image_tag('middle.png', alt: "Middle", id:'middle')
+        = image_tag('tiste.png', alt: "Tiste", id:'tiste')
+    .col-lg-3.col-md-3.col-sm-4.col-xs-12.text-right
+      = link_to change_locale_path(:en)
+        = image_tag('wp-comments.png', alt: t('menu.languages.en'))
+      = link_to change_locale_path(:fr)
+        = image_tag('wp-watermark.png', alt: t('menu.languages.fr'))
