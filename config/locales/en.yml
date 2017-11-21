@@ -37,4 +37,9 @@ en:
     languages:
       en: EN
       fr: FR
-
+  index:
+    headline: Welcome to our website where we write postcards
+  show:
+    others: Read our other cards
+    previous_card: Previous postcard
+    next_card: Next postcard

@@ -223,3 +223,9 @@ fr:
       fr: FR
   routes:
     post_cards: cartes
+  index:
+    headline: Bienvenue sur notre site ou l'on écrit des cartes. Youhou
+  show:
+    others: Lire nos autres cartes
+    previous_card: Carte précédente
+    next_card: Carte suivante

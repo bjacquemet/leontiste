@@ -1,24 +1,15 @@
 p#notice= notice
 
-.container
-  h1= t('title.post_cards')
+h1= t('title.post_cards')
 
-  #TODO
-  #- Add an administrate and protect it √
-  #- Add language translation to routes √
-  #- Add language translation to forms √
-  #- Translate all static texts 
-  #- only show published postal cards √
-  #- add next and previous cartes buttons √
+p= t('index.headline')
 
-  p Welcome to our website
-
-  .row
-    - @post_cards.each do |post_card|
-      .col-lg-4.col-md-4.col-sm-6.col-xs-12.mt-2
-        = link_to post_card_path(post_card)
-          = image_tag post_card.image_url, alt: post_card.title, title: post_card.title, class: 'img-fluid'
-          h4= post_card.title
+.row
+  - @post_cards.each do |post_card|
+    .col-lg-4.col-md-4.col-sm-6.col-xs-12.mt-2
+      = link_to post_card_path(post_card)
+        = image_tag post_card.image_url, alt: post_card.title, title: post_card.title, class: 'img-fluid post_card_img'
+        h4= post_card.title
 
 
-  = link_to 'New Carte', new_post_card_path
+= link_to 'New Carte', new_post_card_path

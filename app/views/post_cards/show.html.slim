@@ -1,42 +1,43 @@
 p#notice= notice
+.col-lg-10.col-md-10.col-sm-10.col-xs-12.offset-lg-1.offset-md-1.mb-3.text-center
+  = image_tag @post_card.image_url, alt: @post_card.title, title: @post_card.title, class: 'img-fluid post_card_img mb-2'
 
-.container
-  .col-lg-10.col-md-10.col-sm-10.col-xs-12.offset-lg-1.offset-md-1
+.col-lg-12.col-md-12.col-sm-12.col-xs-12.main-container.mb-4.rounded
+  h4
+    = @post_card.title
 
-    .col-lg-10.col-md-10.col-sm-10.col-xs-12.offset-lg-1.offset-md-1.mb-3
-      = image_tag @post_card.image_url, alt: @post_card.title, title: @post_card.title, class: 'img-fluid'
+  p
+    = t('sent_on')
+    em= @post_card.sent_at.strftime('%D')
 
-    .col-lg-12.col-md-12.col-sm-12.col-xs-12.main-container.mb-4.rounded
-      h4
-        = @post_card.title
+  p
+    = @post_card.body.html_safe
 
-      p
-        = t('sent_on')
-        em= @post_card.sent_at.strftime('%D')
+hr
+/ PREV POST CARD
 
-      p
-        = @post_card.body.html_safe
+h3.pt-2= t('show.others')
+.row
+  - if @post_card.prev
+    .col-lg-6.col-md-6.col-sm-6.col-xs-12
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.offset-lg-3.offset-md-3.offset-sm-3
+        h5= t('show.previous_card')
+        =link_to @post_card.prev
+          = image_tag @post_card.prev.image_url, alt: @post_card.prev.title, title: @post_card.prev.title, class: 'img-fluid post_card_img'
+          em= @post_card.prev.title
 
-  hr
   / PREV POST CARD
-  .col-lg-10.col-md-10.col-sm-10.col-xs-12.offset-lg-1.offset-md-1
-    .row
-      - if @post_card.prev
-        .col-lg-3.col-md-3.col-sm-4.col-xs-12
-          =link_to @post_card.prev
-            = image_tag @post_card.prev.image_url, alt: @post_card.prev.title, title: @post_card.prev.title, class: 'img-fluid'
-            em= @post_card.prev.title
-
-      / PREV POST CARD
-      - if @post_card.next
-        .col-lg-3.col-md-3.col-sm-6.col-xs-12
-          =link_to @post_card.next
-            = image_tag @post_card.next.image_url, alt: @post_card.next.title, title: @post_card.next.title, class: 'img-fluid'
-            p
-              em= @post_card.next.title
+  - if @post_card.next
+    .col-lg-6.col-md-6.col-sm-6.col-xs-12
+      .col-lg-6.col-md-6.col-sm-6.col-xs-12.offset-lg-3.offset-md-3.offset-sm-3
+        h5= t('show.next_card')
+        =link_to @post_card.next
+          = image_tag @post_card.next.image_url, alt: @post_card.next.title, title: @post_card.next.title, class: 'img-fluid post_card_img'
+          p
+            em= @post_card.next.title
 
 
 
-  = link_to 'Edit', edit_post_card_path(@post_card)
-  |
-  p = link_to 'Back', post_cards_path
+= link_to 'Edit', edit_post_card_path(@post_card)
+|
+p = link_to 'Back', post_cards_path
