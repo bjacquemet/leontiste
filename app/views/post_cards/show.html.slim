@@ -6,7 +6,7 @@ p#notice= notice
   h1
     = @post_card.title
 
-  p.main-content
+  .main-content
     = @post_card.body.html_safe
 
 hr
@@ -16,21 +16,23 @@ h2= t('show.others')
   / PREV POST CARD
   - if @post_card.prev
     .col-lg-6.col-md-6.col-sm-6.col-xs-12
-      h3.text-center
-        i.fa.fa-chevron-left
-        = t('show.previous_card')
 
       =link_to @post_card.prev
+        h3.text-center
+          i.fa.fa-chevron-left
+          = t('show.previous_card')
+
         = image_tag @post_card.prev.image_url, alt: @post_card.prev.title, title: @post_card.prev.title, class: 'img-fluid post_card_img col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3 no-gutters-col'
         h1.text-center= @post_card.prev.title
 
   / NEXT POST CARD
   - if @post_card.next
     .col-lg-6.col-md-6.col-sm-6.col-xs-12
-      h3.text-center
-        = t('show.next_card')
-        i.fa.fa-chevron-right
 
       =link_to @post_card.next
+        h3.text-center
+          = t('show.next_card')
+          i.fa.fa-chevron-right
+
         = image_tag @post_card.next.image_url, alt: @post_card.next.title, title: @post_card.next.title, class: 'img-fluid post_card_img col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3 no-gutters-col'
         h1.text-center= @post_card.next.title
