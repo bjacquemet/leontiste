@@ -229,3 +229,5 @@ fr:
     others: Lire nos autres cartes
     previous_card: Carte précédente
     next_card: Carte suivante
+  footer:
+    languages: "Choisissez votre langue : "

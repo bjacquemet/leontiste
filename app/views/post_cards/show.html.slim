@@ -3,41 +3,34 @@ p#notice= notice
   = image_tag @post_card.image_url, alt: @post_card.title, title: @post_card.title, class: 'img-fluid post_card_img mb-2'
 
 .col-lg-12.col-md-12.col-sm-12.col-xs-12.main-container.mb-4.rounded
-  h4
+  h1
     = @post_card.title
 
-  p
-    = t('sent_on')
-    em= @post_card.sent_at.strftime('%D')
-
-  p
+  p.main-content
     = @post_card.body.html_safe
 
 hr
-/ PREV POST CARD
 
-h3.pt-2= t('show.others')
+h2= t('show.others')
 .row
+  / PREV POST CARD
   - if @post_card.prev
     .col-lg-6.col-md-6.col-sm-6.col-xs-12
-      .col-lg-6.col-md-6.col-sm-6.col-xs-12.offset-lg-3.offset-md-3.offset-sm-3
-        h5= t('show.previous_card')
-        =link_to @post_card.prev
-          = image_tag @post_card.prev.image_url, alt: @post_card.prev.title, title: @post_card.prev.title, class: 'img-fluid post_card_img'
-          em= @post_card.prev.title
+      h3.text-center
+        i.fa.fa-chevron-left
+        = t('show.previous_card')
 
-  / PREV POST CARD
+      =link_to @post_card.prev
+        = image_tag @post_card.prev.image_url, alt: @post_card.prev.title, title: @post_card.prev.title, class: 'img-fluid post_card_img col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3 no-gutters-col'
+        h1.text-center= @post_card.prev.title
+
+  / NEXT POST CARD
   - if @post_card.next
     .col-lg-6.col-md-6.col-sm-6.col-xs-12
-      .col-lg-6.col-md-6.col-sm-6.col-xs-12.offset-lg-3.offset-md-3.offset-sm-3
-        h5= t('show.next_card')
-        =link_to @post_card.next
-          = image_tag @post_card.next.image_url, alt: @post_card.next.title, title: @post_card.next.title, class: 'img-fluid post_card_img'
-          p
-            em= @post_card.next.title
+      h3.text-center
+        = t('show.next_card')
+        i.fa.fa-chevron-right
 
-
-
-= link_to 'Edit', edit_post_card_path(@post_card)
-|
-p = link_to 'Back', post_cards_path
+      =link_to @post_card.next
+        = image_tag @post_card.next.image_url, alt: @post_card.next.title, title: @post_card.next.title, class: 'img-fluid post_card_img col-lg-6 col-md-6 col-sm-6 col-xs-12 offset-lg-3 offset-md-3 offset-sm-3 no-gutters-col'
+        h1.text-center= @post_card.next.title

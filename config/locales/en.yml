@@ -43,3 +43,5 @@ en:
     others: Read our other cards
     previous_card: Previous postcard
     next_card: Next postcard
+  footer:
+    languages: 'Choose your language: '

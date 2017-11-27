@@ -4,30 +4,23 @@
 @import "font-awesome"
 @import "bootstrap"
 
+// HEADER
+nav
+  margin-top: 30px
+  margin-bottom: 40px
 
-body
-  background: rgba(246, 246, 246, .2)
-
-a, a:hover, a:active, a:visited, a:focus
-  text-decoration: none
+  .align-top
+    padding-left: 5px
 
 @media(max-width: 768px)
   #middle
     width: 0px !important
 
-.block
-  display: block
-
 #middle
-  height: 113px
+  height: 71px
   width: 0px
   opacity: 0
   +transition(all 0.2s)
-  // -webkit-transition: width 0.2s
-  // -moz-transition: width 0.2s
-  // -ms-transition: width 0.2s
-  // -o-transition: width 0.2s
-  // transition: width 0.2s
 
 .logo-block
   a
@@ -42,22 +35,89 @@ a, a:hover, a:active, a:visited, a:focus
 
   &:hover #middle
     opacity: 1
-    width: 269px
+    width: 214px
     +transition(width 0.4s)
-    // -webkit-transition: width 0.4s
-    // -moz-transition: width 0.4s
-    // -ms-transition: width 0.4s
-    // -o-transition: width 0.4s
-    // transition: width 0.4s
 
-.rounded
-  border-radius: 0.4rem
+// GENERAL
+
+body
+  background: rgba(246, 246, 246, .2)
+  font-weight: 300
+  font-family: 'Open Sans', Helvetica, sans-serif
+
+h1, h2
+  font-family: 'Lato', Helvetica, sans-serif
+  color: $brand-primary
+  font-weight: 400
+
+h1
+  font-variant: small-caps
+  font-size: 1.65rem
+  padding-top: 0.25rem
+  margin-bottom: 0.35rem
+
+h2
+  font-size: 1.35rem
+
+h3
+  font-family: 'Lato', Helvetica, sans-serif
+  font-weight: 300
+  color: $gray-base
+  font-size: 1rem
+
+.fa-chevron-left
+  padding-right: 6px
+
+.fa-chevron-right
+  padding-left: 6px
+
+a, a:visited
+  color: $brand-primary
+  p
+    color: $brand-primary
+
+a:hover, a:focus, a:active
+  color: darken($brand-primary, 12%)
+  p
+    color: darken($brand-primary, 12%)
+
+
+a, a:hover, a:active, a:visited, a:focus
+  text-decoration: none
+
+p
+  color: $gray-base
+  margin-top: 3px
+  margin-bottom: 6px
+
+hr
+  border-top: 1px solid rgba($brand-secondary, 0.65)
+  @extend .my-4
+
+
+// CONTENT
+
+.main-content
+  @extend .py-2
 
 .main-container
   @extend .py-4
   @extend .px-4
   background: image-url('background.jpg')
   box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12), -1px -1px 7px 0px rgba(0, 0, 0, 0.12)
+  border-radius: 0.4rem
 
 .post_card_img
   box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.2), -1px -1px 7px 0px rgba(0, 0, 0, 0.12)
+
+
+// FOOTER
+
+footer
+  margin-top: 180px
+  background-color: $gray-base
+  @extend .py-4
+  a, a:visited
+    color: $light-gray !important
+  a:hover, a:focus, a:active
+    color: darken($light-gray, 8%) !important

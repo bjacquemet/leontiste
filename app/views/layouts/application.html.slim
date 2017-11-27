@@ -6,9 +6,12 @@ html
     title Leontiste
     == csrf_meta_tags
     == stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    == favicon_link_tag 'favicon.ico'
+    == stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:300|Lato:300,400", :media => 'all'
     == javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     == render 'layouts/navigation'
     .container
       .col-lg-10.col-md-10.col-sm-10.col-xs-12.offset-lg-1.offset-md-1
         = yield
+    / == render 'layouts/footer'
