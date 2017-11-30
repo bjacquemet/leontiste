@@ -215,7 +215,7 @@ fr:
 
   # ADDED
   title:
-    post_cards: Cartes
+    post_cards: Cartes Postales
   sent_on: 'Envoyé le '
   menu:
     languages:
@@ -223,11 +223,13 @@ fr:
       fr: FR
   routes:
     post_cards: cartes
-  index:
-    headline: Bienvenue sur notre site ou l'on écrit des cartes. Youhou
   show:
     others: Lire nos autres cartes
     previous_card: Carte précédente
     next_card: Carte suivante
   footer:
     languages: "Choisissez votre langue : "
+  index:
+    headline1: Notre périple a commencé en Nouvelle-Zélande et se poursuivra là où le vent nous mènera, au fil des rencontres et des opportunités.
+    headline2: Pendant ces quelques mois éloignés de vous, nous aimerions vous tenir au courant de nos aventures au travers de cartes postales régulières.
+    headline3: Mais le temps risquant de nous manquer un peu, nous avons décidé de créer nos propres cartes postales digitales et de vous les partager ici. En bonus, vous aurez le droit à plein de photos et videos.

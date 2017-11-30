@@ -5,7 +5,7 @@ class PostCardsController < ApplicationController
   # GET /post_cards
   # GET /post_cards.json
   def index
-    @post_cards = PostCard.all.where(published: true)
+    @post_cards = PostCard.all.where(published: true).order(sent_at: :desc)
   end
 
   # GET /post_cards/1
