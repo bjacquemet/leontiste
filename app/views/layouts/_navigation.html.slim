@@ -2,13 +2,13 @@ nav.navbar.navbar-default.navbar-toggleable-sm.navbar-light.navbar-static-top
   .container
     .col-lg-10.col-md-10.col-sm-12.col-xs-12.offset-lg-1.offset-md-1
       .row
-        .logo-block.col-lg-9.col-md-11.col-sm-8.col-xs-12
+        .logo-block.col-lg-9.col-md-11.col-sm-12.col-xs-12
           h1 Leontiste
           a href="/"
             = image_tag('leon.png', alt: "Leon", id:'leon')
             = image_tag('middle.png', alt: "Middle", id:'middle')
             = image_tag('tiste.png', alt: "Tiste", id:'tiste')
-        .col-lg-3.col-md-1.col-sm-4.col-xs-12.text-right
+        .col-lg-3.col-md-1.col-sm-12.col-xs-12.text-right
           = link_to change_locale_path(:en)
             = image_tag('queen_elizabeth.png', alt: t('menu.languages.en'), title: t('menu.languages.en'), class: 'align-top')
           = link_to change_locale_path(:fr)
