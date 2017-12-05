@@ -12,6 +12,11 @@ nav
   .align-top
     padding-left: 5px
 
+  @include media-breakpoint-down(xs)
+    .container:first-child
+      padding-left: 0px !important
+      padding-right: 0px !important
+
 @media(max-width: 768px)
   #middle
     width: 0px !important
