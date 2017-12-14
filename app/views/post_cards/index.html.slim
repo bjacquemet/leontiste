@@ -15,3 +15,11 @@ p= t('index.headline3')
         = image_tag post_card.image_url, alt: post_card.title, title: post_card.title, class: 'img-fluid post_card_img'
         h1.mb-0= post_card.title
         p.mt-0= post_card.sent_at.strftime('%d/%m/%Y')
+
+hr
+
+.row.mt-2
+  h1= t('index.where')
+  .col-lg-12.col-md-12.col-sm-12.col-xs-12
+    .embed-responsive.embed-responsive-4by3
+      iframe(class="embed-responsive-item" src="https://www.google.com/maps/d/embed?mid=19BKsQbuiEgd7QxHUEU2pCEqB7DHS_z0X")
