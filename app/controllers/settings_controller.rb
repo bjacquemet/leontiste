@@ -5,4 +5,13 @@ class SettingsController < ApplicationController
     cookies.permanent[:educator_locale] = l
     redirect_to request.referer || root_url
   end
+
+  def change_identity
+    l_type = params[:type].to_s.strip.to_sym
+    l_name = params[:name].to_s.strip.to_sym
+    cookies.permanent[:leontiste_type] = l_type
+    cookies.permanent[:leontiste_name] = l_name
+    redirect_to request.referer || root_url
+  end
+
 end

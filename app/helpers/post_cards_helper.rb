@@ -5,7 +5,7 @@ module PostCardsHelper
     body = post_card.body
     # noko_bod = Nokogiri::HTML(body)
     # case cookies['leontiste_type']
-    # when 'male'
+    # when 'male', 'solo'
     #   noko_bod.search('.female').remove
     #   noko_bod.search('.group').remove
     # when 'female'

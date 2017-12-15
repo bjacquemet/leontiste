@@ -9,6 +9,7 @@ nav.navbar.navbar-default.navbar-toggleable-sm.navbar-light.navbar-static-top
             = image_tag('middle.png', alt: "Middle", id:'middle')
             = image_tag('tiste.png', alt: "Tiste", id:'tiste')
         .col-lg-3.col-md-1.col-sm-12.col-xs-12.text-right
+          / = link_to change_identity_path({"type" => "group", "name" => 'Baptiste'})
           = link_to change_locale_path(:en)
             = image_tag('queen_elizabeth.png', alt: t('menu.languages.en'), title: t('menu.languages.en'), class: 'align-top')
           = link_to change_locale_path(:fr)
