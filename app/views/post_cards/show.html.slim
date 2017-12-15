@@ -11,7 +11,7 @@ p#notice= notice
     = @post_card.title
 
   .main-content
-    = @post_card.body.html_safe
+    = body_replaced(@post_card)
 
 hr
 
