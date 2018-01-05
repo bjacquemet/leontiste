@@ -27,7 +27,7 @@ gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
 # gem 'therubyracer', platforms: :ruby
 
 gem "bourbon"
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta2'
 gem 'font-awesome-sass', '~> 4.7.0'
 
 gem "slim-rails"
