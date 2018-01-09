@@ -7,8 +7,10 @@ class SettingsController < ApplicationController
   end
 
   def change_identity
+    l_type = params[:email].to_s.strip.to_sym
     l_type = params[:type].to_s.strip.to_sym
     l_name = params[:name].to_s.strip.to_sym
+    cookies.permanent[:leontiste_email] = l_email
     cookies.permanent[:leontiste_type] = l_type
     cookies.permanent[:leontiste_name] = l_name
     redirect_to request.referer || root_url
