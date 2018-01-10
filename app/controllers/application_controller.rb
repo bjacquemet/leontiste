@@ -16,14 +16,11 @@ class ApplicationController < ActionController::Base
   private
 
   def extract_locale_from_accept_language_header
-    case request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-    when 'fr'
-      'fr'
-    when 'en'
-      'en'
-    else
-      'fr'
+    if request.env['HTTP_ACCEPT_LANGUAGE'] &&
+      request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first == 'en'
+        return 'en'
     end
+    'fr'
   end
 
 end
